@@ -1,0 +1,95 @@
+/* This file is used to style the login and signup forms */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.auth-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px; 
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+.auth-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+.auth-button:hover {
+    background-color: #0056b3;
+}
+
+/* This is used in case there is an error*/
+.status-message {
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.status-message.error {
+    color: #cc0000;
+    background-color: #ffe6e6;
+    border: 1px solid #cc0000;
+}
+/*and here for the success of the performed action*/
+.status-message.success {
+    color: #008000;
+    background-color: #e6ffe6;
+    border: 1px solid #008000;
+}
+
+/* This section was added to highlight the links especially for the "don't have an account*/
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
