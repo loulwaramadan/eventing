@@ -10,7 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const cancelBookingBtn = document.getElementById('cancelBookingBtn');
     
     const token = localStorage.getItem('userToken');
-    const API_BOOKING_URL = 'http://localhost:5500/api/bookings';
+    // Use relative URL for API - works with both local proxy and production
+    const API_BASE_URL = window.location.hostname === 'localhost'
+        ? 'http://localhost:5500'
+        : '';  // Empty for production - will use same domain or configure your backend URL
+    const API_BOOKING_URL = `${API_BASE_URL}/api/bookings`;
 
     if (!token) {
         alert('You must be logged in to book an event.');

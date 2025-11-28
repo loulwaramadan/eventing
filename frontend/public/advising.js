@@ -3,10 +3,14 @@
 document.addEventListener('DOMContentLoaded', () => {
     
     // This is to be able to access the forms using their ids
-    const advisingForm = document.getElementById('advisingForm'); 
-    const bookingModal = document.getElementById('bookingModal'); 
-    const token = localStorage.getItem('userToken'); 
-    const API_ADVISING_URL = 'http://localhost:5500/api/advising';
+    const advisingForm = document.getElementById('advisingForm');
+    const bookingModal = document.getElementById('bookingModal');
+    const token = localStorage.getItem('userToken');
+    // Use relative URL for API - works with both local proxy and production
+    const API_BASE_URL = window.location.hostname === 'localhost'
+        ? 'http://localhost:5500'
+        : '';  // Empty for production - will use same domain or configure your backend URL
+    const API_ADVISING_URL = `${API_BASE_URL}/api/advising`;
 
     
     const resetFormAndClose = () => {

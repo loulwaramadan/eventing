@@ -20,7 +20,11 @@ function LoginComponent() {
         
         try {
             // API Call targeting backend's login endpoint
-            const response = await fetch('http://localhost:5500/api/auth/login', {
+            // Use relative URL for API - works with both local proxy and production
+            const API_BASE_URL = window.location.hostname === 'localhost'
+                ? 'http://localhost:5500'
+                : '';  // Empty for production - will use same domain or configure your backend URL
+            const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ 
