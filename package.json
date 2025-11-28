@@ -1,7 +1,6 @@
 {
   "name": "eventing-vercel",
   "version": "1.0.0",
-  "type": "module",
   "description": "Event booking platform - Vercel deployment",
   "scripts": {
     "dev": "cd frontend && npm start",
