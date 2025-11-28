@@ -1,19 +1,14 @@
 {
-  "name": "ramadan_loulwa_project1",
+  "name": "eventing-vercel",
   "version": "1.0.0",
-  "main": "js/server.js",
+  "type": "module",
+  "description": "Event booking platform - Vercel deployment",
   "scripts": {
-    "start": "node js/server.js"
+    "dev": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
     "bcryptjs": "^3.0.3",
-    "cors": "^2.8.5",
-    "dotenv": "^17.2.3",
-    "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.15.3"
   },

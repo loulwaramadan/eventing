@@ -1,23 +1,19 @@
 {
   "version": 2,
-  "builds": [
-    {
-      "src": "frontend/**/*.html",
-      "use": "@vercel/static"
-    },
-    {
-      "src": "api/**/*.js",
-      "use": "@vercel/node"
+  "buildCommand": "cd frontend && npm install && npm run build",
+  "outputDirectory": "frontend/build",
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "@vercel/node@3"
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/$1.js"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/frontend/$1"
-    }
+  },
+  "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
+    { "source": "/(.*)\\.html", "destination": "/$1.html" },
+    { "source": "/(.*)\\.css", "destination": "/$1.css" },
+    { "source": "/(.*)\\.js", "destination": "/$1.js" },
+    { "source": "/(.*)\\.png", "destination": "/$1.png" },
+    { "source": "/(.*)\\.jpg", "destination": "/$1.jpg" },
+    { "source": "/((?!api/).*)", "destination": "/index.html" }
   ]
 }
