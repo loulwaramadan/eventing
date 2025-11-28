@@ -2,18 +2,9 @@
   "version": 2,
   "buildCommand": "cd frontend && npm install && npm run build",
   "outputDirectory": "frontend/build",
-  "functions": {
-    "api/**/*.js": {
-      "runtime": "@vercel/node@3"
-    }
-  },
+  "framework": null,
   "rewrites": [
     { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/(.*)\\.html", "destination": "/$1.html" },
-    { "source": "/(.*)\\.css", "destination": "/$1.css" },
-    { "source": "/(.*)\\.js", "destination": "/$1.js" },
-    { "source": "/(.*)\\.png", "destination": "/$1.png" },
-    { "source": "/(.*)\\.jpg", "destination": "/$1.jpg" },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    { "source": "/(.*)", "destination": "/index.html" }
   ]
 }
