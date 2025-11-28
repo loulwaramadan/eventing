@@ -9,7 +9,7 @@ const path = require("path"); // Correct path import
 
 const JWT_SECRET = '9f8a7b6c5d4e3f2g1h0j'; 
 const app = express();
-const PORT = 5500;
+const PORT = process.env.PORT || 5500;
 
 app.use(cors()); 
 app.use(express.json()); 
